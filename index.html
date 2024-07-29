@@ -265,10 +265,10 @@
                 </div>
             </div>
 
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" name="" placeholder="Email address..." required>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Write Message here..." required></textarea>
+            <form class="contact-form" onsubmit="sendEmail(); reset(); return false">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Email address..." required>
+                <textarea name="" id="textarea" cols="30" rows="10" placeholder="Write Message here..." required></textarea>
                 <input type="submit" value="Submit Now" class="submit-btn"> 
             </form>
         </section>
@@ -286,6 +286,8 @@
     <!-- JS File -->
     <!-- <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script> -->
     <script src="script.js"></script>
+
+
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -306,5 +308,30 @@
     })();
     </script>
     <!--End of Tawk.to Script-->
+
+    <!-- Contact Form Script js -->
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
+    <script>
+        var username = document.getElementById("name");
+        var email = document.getElementById("email");
+        var textarea = document.getElementById("textarea");
+
+        var messageBody = "Name" + username +
+        "<br/> Phone " + email +
+        "<br/> Email " + textarea ;
+        function sendEmail(){
+                    Email.send({
+                            Host : "smtp.elasticemail.com",
+                            Username : "swapnilmor1302@gmail.com",
+                            Password : "1C336CEE311EB998D6C118C9ED8CF1DE6CF2",
+                            To : 'moreswapnil1302@gmail.com',
+                            From : document.getElementById("email").value,
+                            Subject : "New Contact About job Role Enquiry",
+                            Body : messageBody
+                    }).then(
+                            message => alert(message)
+                    );
+        }
+    </script>
 </body>
 </html>
