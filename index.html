@@ -30,7 +30,7 @@
         </ul>
 
         <div class="menu-right">
-            <a href="#" class="menu-btn">
+            <a href="#" class="menu-btn" id="lets-talk">
                 <span>Let's Talk</span>
                 <i class="ri-message-3-line"></i>
             </a>
@@ -286,5 +286,25 @@
     <!-- JS File -->
     <!-- <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script> -->
     <script src="script.js"></script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    Tawk_API.onLoad = function(){
+        document.getElementById('lets-talk').addEventListener('click', function(){
+            Tawk_API.maximize();
+        });
+        // document.getElementById('chatWindow').style.display = 'block';
+    };
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/66a7778dbecc2fed692c667d/1i3v2m0iv';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>
